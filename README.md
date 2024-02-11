@@ -5,3 +5,6 @@
 
 <h2>Changes added (28/01/2024): Profiles branch</h2>
 <p>A class for loading books was added only when the Testdata profile is active</p>
+
+<h2>Changes added (11/02/2024): </h2>
+<p>Centralized configuration server using a git repository, with refresh functionality.</p>
