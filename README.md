@@ -8,3 +8,6 @@
 
 <h2>Changes added (11/02/2024): </h2>
 <p>Centralized configuration server using a git repository, with refresh functionality.</p>
+
+<h2>Changes added (13/02/2024): </h2>
+<p>Adding persistence with Spring Data JDBC.</p>
