@@ -31,10 +31,12 @@ public class BookService {
 		return bookRepository.findByIsbn(isbn)
 				.map(e -> {
 					Book bookToUpdate = new Book(
+							e.id(),
 							isbn, 
 							book.title(),
 							book.author(), 
-							book.price());
+							book.price(),
+							e.version());
 					return bookRepository.save(bookToUpdate);
 				})
 				.orElseGet(() -> addBookToCatalog(book));

@@ -24,14 +24,14 @@ public class BookValidationTests {
 	
 	@Test
 	void whenAllFieldsCorrectThenValidationSucceeds() {
-		Book book = new Book("1234567890123", "Asterix el galo", "Goscinny y Uderzo", 10.00);
+		Book book = Book.of("1234567890123", "Asterix el galo", "Goscinny y Uderzo", 10.00);
 		Set<ConstraintViolation<Book>> violations = validator.validate(book);
 		assertThat(violations).isEmpty();
 	}
 
 	@Test
 	void whenIsbnDefinedButIncorrectThenValidationFails() {
-		Book book = new Book("1234567", "Asterix el galo", "Goscinny y Uderzo", 10.00);
+		Book book = Book.of("1234567", "Asterix el galo", "Goscinny y Uderzo", 10.00);
 		Set<ConstraintViolation<Book>> violations = validator.validate(book);
 		assertThat(violations).hasSize(1);
 		assertThat(violations.iterator().next().getMessage())

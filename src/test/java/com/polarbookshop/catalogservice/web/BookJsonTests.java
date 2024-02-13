@@ -20,7 +20,7 @@ public class BookJsonTests {
 	
 	@Test
 	void testSerialize() throws IOException {
-		Book book = new Book("1234567890126", "Asterix gladiador", "Goscinny y Uderzo", 10.00);
+		Book book = Book.of("1234567890126", "Asterix gladiador", "Goscinny y Uderzo", 10.00);
 		JsonContent<Book> jsonContent = json.write(book);
 		assertThat(jsonContent).extractingJsonPathStringValue("@.isbn")
 			.isEqualTo(book.isbn());
@@ -30,15 +30,17 @@ public class BookJsonTests {
 	void testDeserialize() throws IOException {
 		String jsonContent = """
 				{
+				    "id": 0,
 					"isbn": "1234567890129",
 					"title": "Asterix y Cleopatra",
 					"author": "Goscinny y Uderzo",
-					"price": 10.00
+					"price": 10.00,
+					"version": 0
 				}
 				""";
 		Book book = json.parse(jsonContent).getObject();
 		
 		assertThat(book).usingRecursiveComparison()
-			.isEqualTo(new Book("1234567890129", "Asterix y Cleopatra", "Goscinny y Uderzo", 10.00));
+			.isEqualTo(Book.of("1234567890129", "Asterix y Cleopatra", "Goscinny y Uderzo", 10.00));
 	}
 }
