@@ -1,5 +1,7 @@
 package com.polarbookshop.catalogservice.demo;
 
+import java.util.List;
+
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.EventListener;
@@ -20,9 +22,9 @@ public class BookDataLoader {
 	
 	@EventListener(ApplicationReadyEvent.class)
 	public void loadBookTestData() {
+		bookRepository.deleteAll();
 		Book book1 = Book.of("1234567890130", "Asterix legionario", "Goscinny y Uderzo", 10.00);
 		Book book2 = Book.of("1234567890132", "Asterix y el caldero", "Goscinny y Uderzo", 10.00);
-		bookRepository.save(book1);
-		bookRepository.save(book2);
+		bookRepository.saveAll(List.of(book1, book2));
 	}
 }
