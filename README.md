@@ -11,3 +11,6 @@
 
 <h2>Changes added (13/02/2024): </h2>
 <p>Adding persistence with Spring Data JDBC.</p>
+
+<h2>Changes added (14/02/2024): </h2>
+<p>Extending CrudRepository interface and updating tests.</p>
