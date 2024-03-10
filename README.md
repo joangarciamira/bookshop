@@ -14,3 +14,6 @@
 
 <h2>Changes added (14/02/2024): </h2>
 <p>Extending CrudRepository interface and updating tests.</p>
+
+<h2>Changes added (10/03/2024): </h2>
+<p>Adding integration tests with testcontainers.</p>
