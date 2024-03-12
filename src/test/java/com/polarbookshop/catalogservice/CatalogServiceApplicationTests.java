@@ -20,6 +20,10 @@ public class CatalogServiceApplicationTests {
 	private WebTestClient webTestClient;
 	
 	@Test
+	void contextLoads() {
+	}
+	
+	@Test
 	void whenPostRequestThenBookCreated() {
 		Book expectedBook = Book.of("1234567890125", "Asterix y los godos", "Goscinny y Uderzo", 10.00);
 		
