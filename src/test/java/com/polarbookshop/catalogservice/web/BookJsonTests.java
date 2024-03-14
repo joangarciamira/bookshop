@@ -45,7 +45,6 @@ public class BookJsonTests {
 		Book book = json.parse(jsonContent).getObject();
 		
 		assertThat(book).usingRecursiveComparison()
-			.isEqualTo(new Book(0L, "1234567890129", "Asterix y Cleopatra", "Goscinny y Uderzo", 10.00,
-								instant, instant, 0));
+			.isEqualTo(new Book(0L, "1234567890129", "Asterix y Cleopatra", "Goscinny y Uderzo", 10.00, instant, instant, 0));
 	}
 }
