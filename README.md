@@ -17,3 +17,6 @@
 
 <h2>Changes added (10/03/2024): </h2>
 <p>Adding integration tests with testcontainers.</p>
+
+<h2>Changes added (14/03/2024): </h2>
+<p>Correcting test issues and adding flyway for database evolution functionality.</p>
