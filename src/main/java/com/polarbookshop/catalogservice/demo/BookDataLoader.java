@@ -23,8 +23,8 @@ public class BookDataLoader {
 	@EventListener(ApplicationReadyEvent.class)
 	public void loadBookTestData() {
 		bookRepository.deleteAll();
-		Book book1 = Book.of("1234567890130", "Asterix legionario", "Goscinny y Uderzo", 10.00);
-		Book book2 = Book.of("1234567890132", "Asterix y el caldero", "Goscinny y Uderzo", 10.00);
+		Book book1 = Book.of("1234567890130", "Asterix legionario", "Goscinny y Uderzo", 10.00, "");
+		Book book2 = Book.of("1234567890132", "Asterix y el caldero", "Goscinny y Uderzo", 10.00, "Albert-René");
 		bookRepository.saveAll(List.of(book1, book2));
 	}
 }
