@@ -9,16 +9,18 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, properties = {"spring.cloud.config.enabled=false", "spring.profiles.active=integration"})
+//@SpringBootTest
 @ActiveProfiles("integration")
+//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class CatalogServiceApplicationTests {
 
 	@Autowired
 	private WebTestClient webTestClient;
 	
-	@Test
-	void contextLoads() {
-	}
+ 	@Test
+ 	void contextLoads() {
+ 	}
 	
 	@Test
 	void whenPostRequestThenBookCreated() {
